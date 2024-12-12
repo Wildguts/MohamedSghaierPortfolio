@@ -1,0 +1,98 @@
+body {
+  position: relative;
+  background: #000;
+  overflow: hidden;
+}
+
+canvas {
+    display: block;
+}
+
+.right {
+  text-align: right;
+}
+
+.help {
+  display: none; /* must be hidden in codepen's image preview */
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+
+  padding: 20px 30px;
+
+  color: #e7f0f6;
+
+  background: #292929;
+  background: rgba(41, 41, 41, 0.6);
+}
+
+.help .title {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.help p {
+  margin: 10px 0 0 0;
+  color: #97979c;
+  font-size: 14px;
+}
+
+.help a {
+  display: inline-block;
+  margin: 0;
+  padding: 6px 10px;
+  color: #fff;
+  font-size: 14px;
+  background: #337578;
+  text-decoration: none;
+}
+
+.help hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #337578;
+    margin: 1em 0;
+    padding: 0;
+}
+.section
+{
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  font-family: 'Cabin', sans-serif;
+  color: #ffffff;
+  text-transform: uppercase;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+.scroll-up-instruction {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+  z-index: 10;
+  font-size: 16px;
+  animation: fade-in 1s ease-in-out;
+
+  .arrow-up {
+    display: block;
+    font-size: 24px;
+    margin-top: 5px;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

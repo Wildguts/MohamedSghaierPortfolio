@@ -1,0 +1,309 @@
+
+.black-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 1000;
+}
+
+.hidden {
+  display: none;
+}
+.html
+{
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size: fixed;
+  width: 100%;
+  height: 100%;
+  background-attachment: fixed;
+  background-color: #000000;
+  background-image: url("../../../public/textures/gradients/universee.jpg")
+
+}
+
+.webgl
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  outline: none;
+}
+
+
+.section
+{
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  font-family: 'Cabin', sans-serif;
+  color: #ffffff;
+  text-transform: uppercase;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+section:nth-child(odd)
+{
+  justify-content: flex-end;
+}
+
+h2 {
+font-weight: 400;
+margin: 2rem 0 0.25rem 0;
+}
+
+h1 {
+position: fixed;
+right: 1rem;
+bottom: 1rem;
+opacity: 0.5;
+margin: 0;
+}
+
+
+
+
+figure {
+width: 500px;
+aspect-ratio: 8 / 5;
+--bg: hsl(280, 89%,calc(90% - (var(--hover) * 10%)));
+--accent: hsl(280, 89%, 11%);
+transition: background 0.2s;
+background:
+  radial-gradient(circle at top left, var(--accent), transparent 75%),
+  var(--bg);
+margin: 0;
+position: relative;
+overflow: hidden;
+border-radius: 1.5rem;
+}
+
+figure:after {
+content: "";
+position: absolute;
+width: 20%;
+aspect-ratio: 1;
+border-radius: 50%;
+bottom: 0%;
+left: 10%;
+background: linear-gradient(-65deg, var(--bg) 50%, var(--accent) 50%);
+filter: blur(25px);
+transform:
+  translateX(calc(var(--hover) * 15%))
+  scale(calc(1 + (var(--hover) * 0.2)));
+transition: transform 0.2s, background 0.2s;
+}
+
+img {
+
+width: 10%;
+transform:
+  translateX(calc(var(--hover) * -15%))
+  scale(calc(1 + (var(--hover) * 0.2)));
+transition: transform 0.2s;
+}
+
+article {
+--hover: 0;
+}
+
+article:hover {
+--hover: 1;
+}
+.card-container {
+perspective: 50em;
+
+&:nth-child(1) { --bi: repeating-linear-gradient(30deg, #111 0 0.25em, #333 0 1em); }
+&:nth-child(2) { --bi: linear-gradient(#555 5em, #0000 3em), linear-gradient(60deg, #880E4F, #1A237E); }
+}
+
+.card {
+position: relative;
+width: 320px;
+padding: 3em;
+color: #000000;
+transform: rotateY(30deg) rotateX(15deg);
+transform-style: preserve-3d;
+transition: transform 1s;
+
+&:hover {
+  transform: rotateY(-30deg) rotateX(-15deg);
+}
+}
+
+.layers {
+position: absolute;
+left: 0; top: 0;
+width: 100%; height: 100%;
+transform-style: preserve-3d;
+z-index: -1;
+}
+
+.layer {
+position: absolute;
+left: 0; top: 0;
+width: 100%; height: 100%;
+border-radius: 1em;
+background-image: var(--bi);
+transform: translateZ(var(--tz));
+box-shadow: 0 0 0.5em #000d inset;
+
+@for $i from 0 to 10 {
+  &:nth-child(#{$i + 1}) {
+  --tz: #{$i * -4}px;
+  }
+}
+
+&:last-child {
+  box-shadow: 0 0 0.5em #000d inset, 0 0 5px #000;
+}
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url("../../../public/universe.gif")
+
+}
+
+.article-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.full-page{
+  margin: 0;
+  padding: 0;
+}
+
+.separator {
+  width: 30%;
+}
+
+.title {
+  margin-top: 100px;
+  margin-bottom: 10px;
+
+  a {
+    color: #DB4D57;
+
+    &:hover {
+      text-decoration: none;
+      font-weight: bold;
+    }
+  }
+
+  hr {
+    width: 75%;
+  }
+}
+
+.summary {
+  padding: 20px;
+}
+
+
+.work-experience {
+  padding: 20px;
+
+  .experience-title {
+    margin-top: 50px;
+  }
+
+  .experience-summary {
+    margin-top: 30px;
+    margin-bottom: 50px;
+  }
+
+}
+
+.card:hover .wrapper {
+  transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+  box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+}
+
+.wrapper::before,
+.wrapper::after {
+  content: "";
+  opacity: 0;
+  width: 100%;
+  height: 80px;
+  transition: all 0.5s;
+  position: absolute;
+  left: 0;
+}
+.wrapper::before {
+  top: 0;
+  height: 100%;
+  background-image: linear-gradient(
+    to top,
+    transparent 46%,
+    rgba(12, 13, 19, 0.5) 68%,
+    rgba(12, 13, 19) 97%
+  );
+}
+.wrapper::after {
+  bottom: 0;
+  opacity: 1;
+  background-image: linear-gradient(
+    to bottom,
+    transparent 46%,
+    rgba(12, 13, 19, 0.5) 68%,
+    rgba(12, 13, 19) 97%
+  );
+}
+
+.card:hover .wrapper::before,
+.wrapper::after {
+  opacity: 1;
+}
+
+.card:hover .wrapper::after {
+  height: 120px;
+}
+.title {
+  width: 100%;
+  transition: transform 0.5s;
+}
+.card:hover .title {
+  transform: translate3d(0%, -50px, 100px);
+}
+
+.character {
+  width: 100%;
+  opacity: 0;
+  transition: all 0.5s;
+  position: absolute;
+  z-index: -1;
+}
+
+.card:hover .character {
+  opacity: 1;
+  transform: translate3d(0%, -30%, 100px);
+}
+
+.cover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wrapper {
+  transition: all 0.5s;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
