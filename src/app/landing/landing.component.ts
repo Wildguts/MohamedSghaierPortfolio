@@ -75,7 +75,8 @@ export class LandingComponent {
   backgroundMove: boolean = false;
   timestamp: number = Date.now();
   isBlackOverlayVisible = true;
-
+  elapsedTime = 0;
+  
   constructor(
     private renderer2: Renderer2,
     @Inject(DOCUMENT) private document: Document,
@@ -94,6 +95,7 @@ export class LandingComponent {
       this.initThreeJs();
       this.setupScrollSnap()
       this.addGlobalClickListener();
+
     }
   }
 
