@@ -6,6 +6,12 @@ body {
 
 canvas {
     display: block;
+    position: absolute; /* Ensure it covers the background without affecting layout */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Match the viewport width */
+    height: 100vh; /* Match the viewport height */
+    z-index: 0; /* Send behind other elements */
 }
 
 .right {
