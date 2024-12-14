@@ -76,7 +76,7 @@ export class LandingComponent {
   timestamp: number = Date.now();
   isBlackOverlayVisible = true;
   elapsedTime = 0;
-  
+
   constructor(
     private renderer2: Renderer2,
     @Inject(DOCUMENT) private document: Document,
@@ -243,11 +243,11 @@ export class LandingComponent {
     const sectionMeshes = [mesh4 ,mesh2, earth ];
     scene.add( earth,mesh2,  mesh4);
     // light
-    const directionalLight = new THREE.DirectionalLight('#ffffff', 1.5)
-    directionalLight.position.set(-10, 10, 50)
+    const directionalLight = new THREE.DirectionalLight('#ffffff', 2)
+    directionalLight.position.set(1, 10, 10)
     scene.add(directionalLight);
 
-    const hemiLight = new THREE.HemisphereLight( 0xffffff, 0xffffff, 0.1 );
+    const hemiLight = new THREE.HemisphereLight( 0xffffff, 0xffffff, 0 );
           hemiLight.color.setHSL( 0.6, 1, 0.6 );
           hemiLight.groundColor.setHSL( 0.095, 1, 0.75 );
           hemiLight.position.set( 0, 0, 0 );
