@@ -22,6 +22,7 @@ export class ExperienceComponent {
   COLOR_WHITE = 0xffffff
   COLOR_BLACK = 0x000000;
   showScrollUp = false;
+  showScrollMoreUp = false
   zoomThreshold = 1;
   private renderer!: THREE.WebGLRenderer;
   private scene!: THREE.Scene;
@@ -303,6 +304,10 @@ export class ExperienceComponent {
     if (this.camera.zoom >= this.zoomThreshold || this.camera.zoom < - this.zoomThreshold ) {
       this.redirectToHomePage(); // Your redirection function
     }
+    if (this.camera.zoom <= 8 || this.camera.zoom < - 8 ) {
+      this.showScrollUp = false;
+      this.showScrollMoreUp = true;
+    }
   }
 
   // For PerspectiveCamera
@@ -310,6 +315,10 @@ export class ExperienceComponent {
     const distance = this.camera.position.length(); // Distance from the origin
     if (distance <= this.zoomThreshold || distance < - this.zoomThreshold ) {
       this.redirectToHomePage(); // Your redirection function
+    }
+    if (distance <= 14 || distance < - 14 ) {
+      this.showScrollUp = false;
+      this.showScrollMoreUp = true;
     }
   }
 
