@@ -5,6 +5,7 @@ import gsap from 'gsap';
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { inject } from "@vercel/analytics"
 
 @Component({
   selector: 'app-root',
